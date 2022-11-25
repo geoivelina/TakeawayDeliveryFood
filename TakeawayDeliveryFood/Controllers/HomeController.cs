@@ -16,7 +16,9 @@ namespace TakeawayDeliveryFood.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View();
+            var model = await restaurantService.AllRestaurants();
+
+            return View(model);
         }
 
        

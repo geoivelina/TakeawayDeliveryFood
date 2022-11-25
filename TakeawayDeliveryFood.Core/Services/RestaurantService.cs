@@ -2,6 +2,7 @@
 using TakeawayDeliveryFood.Core.Contracts;
 using TakeawayDeliveryFood.Core.Models.Restaurant;
 using TakeawayDeliveryFood.Infrastructure.Data;
+using TakeawayDeliveryFood.Infrastructure.Data.Entities;
 
 namespace TakeawayDeliveryFood.Core.Services
 {
@@ -24,6 +25,26 @@ namespace TakeawayDeliveryFood.Core.Services
                      Name = c.Name,
                  })
                  .ToListAsync();
+        }
+
+        public async Task<IEnumerable<RestaurantIndexModel>> AllRestaurants()
+        {
+            return await repo.AllReadonly<Restaurant>()
+                .OrderByDescending(r => r.Id)
+                .Select(r => new RestaurantIndexModel()
+                {
+                    Id = r.Id,
+                    CuisineType = r.CuisineType.Name,
+                    Name = r.Name,
+                    DeliveryCost = r.DeliveryCost,
+                    DeliveryTime = r.DeliveryTime,
+                    Description = r.Description,
+                    MinOrderAmount = r.MinOrderAmount,
+                    Rating = r.Rating,
+                    RestaurantImage = r.RestaurantImage,
+                    WorkingHours = r.WorkingHours
+                })
+                .ToListAsync();
         }
 
         public async Task<int> Create(RestaurantModel model)

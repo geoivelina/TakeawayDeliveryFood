@@ -1,9 +1,20 @@
-﻿@model IEnumerable<AllRestaurantsQueryModel>
+﻿@model IEnumerable<RestaurantIndexModel>
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome To Takeaway Delivery Food</h1>
-  
-</div>
+
+
+@if (Model.Count() == 0)
+{
+    <div class="md-4 p-5 bg-light">
+        <h1 class="display-4">Welcome To Takeaway Delivery Food</h1>
+        <p class="lead">
+            There are no added restaurants an that moment, so why dont you start now?
+        </p>
+        <hr class="my-4">
+        <p class="lead">
+            <a asp-controller="Restaurant" asp-action="Add" class="btn btn-primary btn-lg" role="button">Add Restaurant</a>
+        </p>
+    </div>
+}

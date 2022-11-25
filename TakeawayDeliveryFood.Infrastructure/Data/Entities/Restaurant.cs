@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using static TakeawayDeliveryFood.Infrastructure.Data.DataConstants.Restaurant;
 
-namespace TakeawayDeliveryFood.Infrastructure.Data
+namespace TakeawayDeliveryFood.Infrastructure.Data.Entities
 {
-    public  class Restaurant
+    public class Restaurant
     {
         public int Id { get; set; }
 
@@ -38,6 +38,11 @@ namespace TakeawayDeliveryFood.Infrastructure.Data
         [Required]
         [MaxLength(DeliveryTimeMaxLength)]
         public string DeliveryTime { get; set; } = null!;
+
+        [Required]
+        public decimal Rating { get; set; } = 0.0m;
+
+        public IEnumerable<Dish> Dishes { get; set; } = new List<Dish>();
 
     }
 }

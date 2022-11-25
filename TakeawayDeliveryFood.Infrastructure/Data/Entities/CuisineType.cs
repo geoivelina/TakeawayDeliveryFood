@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using static TakeawayDeliveryFood.Infrastructure.Data.DataConstants.CuisineType;
 
-namespace TakeawayDeliveryFood.Infrastructure.Data
+namespace TakeawayDeliveryFood.Infrastructure.Data.Entities
 {
     public class CuisineType
     {
         public CuisineType()
         {
-            this.Restaurants = new List<Restaurant>();
+            Restaurants = new List<Restaurant>();
         }
         public int Id { get; set; }
 

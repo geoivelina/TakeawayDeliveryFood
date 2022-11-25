@@ -1,6 +1,34 @@
-﻿@model AllRestaurantsQueryModel
+﻿@*@model AllRestaurantsQueryModel
 @{
     ViewBag.Title = "All Restaurants";
 }
 
 <h2 class="text-center">@ViewBag.Title</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <a title="Show restaurant menu">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+        <div class="form-group col-md-4">
+            <div class="form-group">
+                <label asp-for="Brand"></label>
+                <select asp-for="Brand" class=" form-control">
+                    <option value="">All</option>
+                    @foreach (var brand in Model.Brand)
+                    {
+                        <option value="@brand">@brand</option>
+                    }
+                </select>
+            </div>
+        </div>*@

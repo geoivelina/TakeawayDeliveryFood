@@ -38,5 +38,13 @@
 
         }
 
+        public class Dish
+        {
+            public const int NameMinLength = 4;
+            public const int NameMaxLength = 15;
+
+            public const int DescriptionMinLength = 20;
+            public const int DescriptionMaxLength = 200;
+        }
     }
 }

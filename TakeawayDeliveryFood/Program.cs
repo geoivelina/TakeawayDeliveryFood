@@ -24,7 +24,7 @@ builder.Services.AddDefaultIdentity<User>(options =>
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddTransient<IRestaurantService, RestaurantService>();
+//Adding sevices from Extentions
 builder.Services.AddApplicationServices();
 
 var app = builder.Build();

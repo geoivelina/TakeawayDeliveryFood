@@ -9,6 +9,7 @@ namespace TakeawayDeliveryFood.Core.Contracts
 {
     public interface IRestaurantService
     {
+        Task<IEnumerable<RestaurantIndexModel>> AllRestaurants();
         Task<IEnumerable<RestaurantCuisineTypeModel>> AllCuisineTypes();
 
         Task<bool> CuisineTypeExist(int cuisineTypeID);

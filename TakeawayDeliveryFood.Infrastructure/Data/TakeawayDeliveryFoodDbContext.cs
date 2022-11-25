@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TakeawayDeliveryFood.Infrastructure.Data.Configuration;
+using TakeawayDeliveryFood.Infrastructure.Data.Entities;
 
 namespace TakeawayDeliveryFood.Infrastructure.Data
 {
@@ -22,6 +23,7 @@ namespace TakeawayDeliveryFood.Infrastructure.Data
 
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<CuisineType> CuisineTypes { get; set; }
+        public DbSet<Dish> Dishes { get; set; }
        // public DbSet<User> Users { get; set; }
     }
 }

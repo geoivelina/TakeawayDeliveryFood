@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using TakeawayDeliveryFood.Infrastructure.Data.Entities;
 
 namespace TakeawayDeliveryFood.Infrastructure.Data.Configuration
 {

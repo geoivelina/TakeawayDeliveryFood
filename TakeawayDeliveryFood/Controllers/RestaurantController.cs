@@ -16,7 +16,7 @@ namespace TakeawayDeliveryFood.Controllers
 
         public async Task<IActionResult> All()
         {
-            var model = new AllRestaurantsQueryModel();
+            var model = new RestaurantIndexModel();
             return View(model);
 
         }
